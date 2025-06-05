@@ -1,0 +1,39 @@
+<!-- html/eventos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listado de Eventos</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <!-- ======= Header / Navegación ======= -->
+  <header>
+    <nav class="nav-principal">
+      <a href="index.html" class="logo">Página de eventos</a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="eventos.html" class="activo">Listado de Eventos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======= Contenido principal: listado de eventos ======= -->
+  <main>
+    <section class="contenedor-eventos">
+      <h1>Todos los eventos</h1>
+      <!-- Aquí inyectará el JS cada artículo de evento -->
+      <div id="listado-eventos"></div>
+    </section>
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <p>&copy; Portal de eventos de Carlos Nerí Campos Pérez</p>
+  </footer>
+
+  <!-- Inclusión de nuestro script de listado (no es módulo, es JS puro) -->
+  <script src="../javascript/listado.js"></script>
+</body>
+</html>

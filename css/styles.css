@@ -1,0 +1,174 @@
+/* css/styles.css */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Navegación ===== */
+.nav-principal {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-principal .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-principal ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-principal li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.nav-principal li a:hover,
+.nav-principal li a.activo {
+  color: #000;
+}
+
+/* ===== Sección intro ===== */
+.seccion-intro {
+  text-align: center;
+  padding: 2rem;
+  background-color: #eef2f5;
+}
+
+.seccion-intro h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.seccion-intro p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* ===== Carrusel ===== */
+.carrusel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.carrusel .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carrusel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carrusel .slide .slide-texto {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+}
+
+.carrusel .slide.oculto {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boton-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#carousel-prev {
+  left: 10px;
+}
+
+#carousel-next {
+  right: 10px;
+}
+
+.boton-carrusel:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Botón “Ver más” debajo del carrusel ===== */
+.ver-mas-container {
+  text-align: center;
+  margin: 2rem 0 4rem;
+}
+
+.btn-ver-mas {
+  background-color: #0073e6;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-ver-mas:hover {
+  background-color: #005bb5;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: auto;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .carrusel {
+    height: 300px;
+  }
+}
