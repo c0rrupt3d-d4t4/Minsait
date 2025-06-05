@@ -1,0 +1,89 @@
+-- 1. Crear la base de datos y usarla
+CREATE DATABASE IF NOT EXISTS `minsait`;
+USE `minsait`;
+
+-- 2. Iniciar transacción para que, en caso de error, no queden tablas sueltas
+START TRANSACTION;
+
+-- 3. Crear tablas sin dependencias primero
+
+-- Tabla Organizador
+CREATE TABLE `Organizador` (
+  `id_organizador` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL,
+  `contacto_email` VARCHAR(255),
+  `contacto_telefono` VARCHAR(50)
+) ENGINE=InnoDB;
+
+-- Tabla Categoria
+CREATE TABLE `Categoria` (
+  `id_categoria` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+-- Tabla Ubicacion
+CREATE TABLE `Ubicacion` (
+  `id_ubicacion` INT AUTO_INCREMENT PRIMARY KEY,
+  `tipo` VARCHAR(100),
+  `direccion` VARCHAR(255),
+  `url` VARCHAR(255)
+) ENGINE=InnoDB;
+
+-- Tabla Usuario
+CREATE TABLE `Usuario` (
+  `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL,
+  `correo` VARCHAR(255) NOT NULL,
+  `contraseña` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+-- 4. Crear tablas con dependencias (citando las tablas creadas arriba)
+
+-- Tabla Evento
+CREATE TABLE `Evento` (
+  `id_evento` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre` VARCHAR(255) NOT NULL,
+  `fecha` DATE NOT NULL,
+  `duracion_horas` INT,
+  `estado` VARCHAR(50),
+  `id_organizador` INT,
+  `id_categoria` INT,
+  `id_ubicacion` INT,
+  CONSTRAINT `fk_evento_organizador`
+    FOREIGN KEY (`id_organizador`)
+    REFERENCES `Organizador`(`id_organizador`)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+  CONSTRAINT `fk_evento_categoria`
+    FOREIGN KEY (`id_categoria`)
+    REFERENCES `Categoria`(`id_categoria`)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL,
+  CONSTRAINT `fk_evento_ubicacion`
+    FOREIGN KEY (`id_ubicacion`)
+    REFERENCES `Ubicacion`(`id_ubicacion`)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- Tabla Inscripcion
+CREATE TABLE `Inscripcion` (
+  `id_inscripcion` INT AUTO_INCREMENT PRIMARY KEY,
+  `fecha_inscripcion` DATE NOT NULL,
+  `estado` VARCHAR(50),
+  `id_usuario` INT,
+  `id_evento` INT,
+  CONSTRAINT `fk_inscripcion_usuario`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `Usuario`(`id_usuario`)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE,
+  CONSTRAINT `fk_inscripcion_evento`
+    FOREIGN KEY (`id_evento`)
+    REFERENCES `Evento`(`id_evento`)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- 5. Confirmar («commit») la transacción
+COMMIT;

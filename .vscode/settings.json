@@ -1,5 +1,6 @@
 {
     "workbench.colorCustomizations": {
+<<<<<<< HEAD
         "sash.hoverBorder": "#ea8ef8",
         "statusBar.background": "#e15ef5",
         "statusBar.foreground": "#15202b",
@@ -8,4 +9,14 @@
         "statusBarItem.remoteForeground": "#15202b"
     },
     "peacock.color": "#e15ef5"
+=======
+        "sash.hoverBorder": "#b1d8ed",
+        "statusBar.background": "#87c3e4",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#5daedb",
+        "statusBarItem.remoteBackground": "#87c3e4",
+        "statusBarItem.remoteForeground": "#15202b"
+    },
+    "peacock.color": "#87c3e4"
+>>>>>>> origin/Base_de_datos
 }
