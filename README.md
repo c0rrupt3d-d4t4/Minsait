@@ -1,7 +1,7 @@
 Este es el proyecto java. Tiene estructura modelo, vista, controlador y una test suite de pruebas.
 El programa permite crear cuentas de organizadores los cuales podran crear eventos.
 Luego permite crear cuentas de usuarios que permitirán inscribirse a los eventos creados.
-Todo esto se prueba en la TestSuite hecha con la librería JUnit5.
+Todo esto se puede probar en la TestSuite hecha con la librería JUnit5.
 
 
 Estructura:
