@@ -1,8 +1,5 @@
-// javascript/carousel.js
-
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Lista de rutas relativas a las imágenes que quieres mostrar en el carrusel.
-  //    Asegúrate de que estos nombres coincidan exactamente con los que tienes en /images/
   const imagenesCarousel = [
     "../images/Concierto.jpg",
     "../images/Feria.jpg",

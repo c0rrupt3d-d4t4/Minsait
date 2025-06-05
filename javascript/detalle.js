@@ -1,5 +1,3 @@
-// javascript/detalle.js
-
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Mismo array de eventos, pero con "descripcionCompleta", "ubicacion" y "organizadores".
   const eventos = [

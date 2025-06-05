@@ -1,5 +1,3 @@
-// javascript/listado.js
-
 document.addEventListener("DOMContentLoaded", () => {
   // 1) Define aquí tu array de eventos (igual que tenías en app.js, pero de forma local):
   const eventos = [
@@ -8,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
       titulo: "Concierto de Jazz en la Plaza Mayor",
       fecha: "2025-07-15",
       descripcionCorta: "Una noche mágica de jazz bajo las estrellas.",
-      // La ruta de imagen se asume relativa a 'eventos.html' (que está en html/),
-      // así que para llegar a images/ usamos "../images/..."
       rutaImagen: "../images/Concierto.jpg"
     },
     {
